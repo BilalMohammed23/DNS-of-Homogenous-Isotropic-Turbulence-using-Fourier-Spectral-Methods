@@ -1,5 +1,5 @@
 # Homogenous-Isotropic-Turbulence-using-Fourier-Spectral-Methods
-This project simulates incompressible homogeneous isotropic turbulence in a three-dimensional \(2\pi\)-periodic domain using Fourier spectral methods in MATLAB. Homogeneous turbulence assumes spatially uniform statistical properties, while isotropic turbulence assumes direction-independent statistics with equal velocity fluctuation intensities.
+This project simulates incompressible homogeneous isotropic turbulence in a three-dimensional $2\pi$-periodic domain using Fourier spectral methods in MATLAB. Homogeneous turbulence assumes spatially uniform statistical properties, while isotropic turbulence assumes direction-independent statistics with equal velocity fluctuation intensities.
 
 The solver is developed for periodic incompressible flow and solves the Fourier-transformed Navier–Stokes equations using spectral differentiation, pressure projection, viscous diffusion, and pseudo-spectral nonlinear term evaluation. De-aliasing is implemented to reduce aliasing errors arising from nonlinear convective products.
 
