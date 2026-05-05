@@ -11,4 +11,4 @@ The main purpose of this project is to build a MATLAB-based spectral turbulence 
 
 To run the code, Open MATLAB,Keep all files in the same folder, Run main.m
 
-Input parameters are made simple just N and Reynold's number
+Input parameters are made simple just N and Reynold's number. If you wanna increase the Reynolds ' number, then it's recommended to increase the grid size as well.
