@@ -152,9 +152,9 @@ Since $\partial(k_i \hat{u}_i)/\partial t = 0$ (continuity), the pressure in Fou
 
 $$\boxed{\hat{P} = -\frac{k_i k_j}{k^2} \widehat{u_i u_j}}$$
 
-### Substituting $\hat{P}$ back into (1)
+### Substituting $\hat{P}$
 
-$$\frac{\partial \hat{u}_i}{\partial t} = -ik_j \widehat{u_i u_j} + ik_i \frac{k_\ell k_m}{k^2} \hat{u}_\ell \hat{u}_m - \nu k^2 \hat{u}_i \tag{1}$$
+$$\frac{\partial \hat{u}_i}{\partial t} = -ik_j \widehat{u_i u_j} + ik_i \frac{k_\ell k_m}{k^2} \hat{u}_\ell \hat{u}_m - \nu k^2 \hat{u}_i$$
 
 where $\ell, m : 1 \to 3$, and the nonlinear term expands as:
 
@@ -230,7 +230,7 @@ The third basis vector is obtained by cross product:
 
 $$e_2' = e_3' \times e_1'$$
 
-$$k\sqrt{k_1^2 + k_2^2} \; e_2' = k_1 k_3 e_1 + k_2 k_3 e_2 - (k_1^2 + k_2^2) e_3$$
+$$k\sqrt{k_1^2 + k_2^2} \. e_2' = k_1 k_3 e_1 + k_2 k_3 e_2 - (k_1^2 + k_2^2) e_3$$
 
 > $e_1', e_2', e_3'$ are a new basis where $e_3' \parallel \vec{k}$ and $k = |\vec{k}| = \sqrt{k_i k_i}$.
 
@@ -238,7 +238,7 @@ $$k\sqrt{k_1^2 + k_2^2} \; e_2' = k_1 k_3 e_1 + k_2 k_3 e_2 - (k_1^2 + k_2^2) e_
 
 Substituting $e_1'$, $e_2'$ and knowing $\alpha$, $\beta$:
 
-$$\hat{\vec{u}} = \underbrace{\left[\frac{\alpha k k_2 + \beta k_1 k_3}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{u} \; @\; t=0} e_1 \; + \; \underbrace{\left[\frac{\beta k_2 k_3 - \alpha k k_1}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{v} \; @\; t=0} e_2 \; - \; \underbrace{\left[\frac{\beta\sqrt{k_1^2 + k_2^2}}{k}\right]}_{\hat{w} \; @\; t=0} e_3$$
+$$\hat{\vec{u}} = \underbrace{\left[\frac{\alpha k k_2 + \beta k_1 k_3}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{u}\ @\; t=0} e_1 \; + \; \underbrace{\left[\frac{\beta k_2 k_3 - \alpha k k_1}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{v}\ @\; t=0} e_2 \; - \; \underbrace{\left[\frac{\beta\sqrt{k_1^2 + k_2^2}}{k}\right]}_{\hat{w}\ @\; t=0} e_3$$
 
 > **Exercise:** Re-derive this expression independently to verify.
 
