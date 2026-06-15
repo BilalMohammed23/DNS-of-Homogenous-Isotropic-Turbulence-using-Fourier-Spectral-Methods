@@ -238,7 +238,7 @@ $$k\sqrt{k_1^2 + k_2^2} \. e_2' = k_1 k_3 e_1 + k_2 k_3 e_2 - (k_1^2 + k_2^2) e_
 
 Substituting $e_1'$, $e_2'$ and knowing $\alpha$, $\beta$:
 
-$$\hat{\vec{u}} = \underbrace{\left[\frac{\alpha k k_2 + \beta k_1 k_3}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{u}\ @\; t=0} e_1 \; + \; \underbrace{\left[\frac{\beta k_2 k_3 - \alpha k k_1}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{v}\ @\; t=0} e_2 \; - \; \underbrace{\left[\frac{\beta\sqrt{k_1^2 + k_2^2}}{k}\right]}_{\hat{w}\ @\; t=0} e_3$$
+$$\hat{\vec{u}} = \underbrace{\left[\frac{\alpha k k_2 + \beta k_1 k_3}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{u}\ @\ t=0} e_1 \; + \; \underbrace{\left[\frac{\beta k_2 k_3 - \alpha k k_1}{k\sqrt{k_1^2 + k_2^2}}\right]}_{\hat{v}\ @\ t=0} e_2 \; - \; \underbrace{\left[\frac{\beta\sqrt{k_1^2 + k_2^2}}{k}\right]}_{\hat{w}\ @\ t=0} e_3$$
 
 > **Exercise:** Re-derive this expression independently to verify.
 
