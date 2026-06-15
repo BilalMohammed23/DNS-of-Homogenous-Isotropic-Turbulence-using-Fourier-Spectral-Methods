@@ -62,7 +62,7 @@ Isotropic turbulence is a **special case of homogeneous turbulence** with the ad
 
 ### Definition
 
-$$R_{ij} = \bar{u_i' u_j'} = R_{ij}(t)$$
+$$R_{ij} = \langle u_i' u_j' \rangle = R_{ij}(t)$$
 
 where $\overline{(\cdot)}$ denotes a **volume average**, and $u_i'$, $u_j'$ are velocity fluctuations in the $i$ and $j$ directions.
 
