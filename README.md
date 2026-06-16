@@ -320,6 +320,8 @@ Once the velocity field is generated, compute $\lambda$ using the general defini
 
 ## 14. Simulation Setup — Step-by-Step
 
+### Part A — Initial Condition Generation
+
 ```
 Step 1 — Choose k₀    e.g., k₀ = 5
           (Range of k is [0, N/2] — Nyquist limit)
@@ -335,7 +337,44 @@ Step 3 — Choose ν to get the desired Reynolds number
 Step 4 — For each (k₁, k₂, k₃), compute k = √(kᵢkᵢ)
           → E(k) determined
           → α(k), β(k) determined
+          → ûᵢ(k⃗) at t = 0 fully specified (Rogallo form)
 ```
+
+### Part B — Time Advancement (Solving the N–S Equations)
+
+Once the initial Fourier coefficients $\hat{u}_i(\vec{k}, t=0)$ are set, advance in time by solving:
+
+$$\frac{\partial \hat{u}_i}{\partial t} = -ik_j \widehat{u_i u_j} + ik_i \frac{k_\ell k_m}{k^2} \hat{u}_\ell \hat{u}_m - \nu k^2 \hat{u}_i$$
+
+Each time step proceeds as (pseudospectral loop):
+
+```
+For each time step:
+
+  1. Inverse FFT  ûᵢ → uᵢ              (go to physical space)
+
+  2. Compute nonlinear product  uᵢuⱼ    (in physical space — avoids convolution in k-space)
+
+  3. FFT  uᵢuⱼ → ûᵢuⱼ  with de-aliasing
+          (3/2 rule or phase-shift method to remove aliasing errors)
+
+  4. Compute pressure in Fourier space:
+          P̂ = − (kᵢkⱼ / k²) ûᵢuⱼ
+
+  5. Evaluate the RHS of N–S in Fourier space:
+          dûᵢ/dt = −ikⱼ ûᵢuⱼ − ikᵢP̂ − νk²ûᵢ
+
+  6. Integrate in time  (e.g., Runge–Kutta 4th order)
+          ûᵢⁿ⁺¹ = ûᵢⁿ + Δt · RHS
+
+  7. Check divergence-free condition:
+          kᵢûᵢ = 0  at every time step
+
+  8. Collect statistics:
+          q²(t),  Rλ(t),  E(k,t),  skewness S(t)
+```
+
+> **Time step constraint (CFL):** $\Delta t \leq \text{CFL} \cdot \Delta x / u_{\max}$ — must be respected to maintain stability.
 
 ---
 
@@ -350,20 +389,25 @@ Step 4 — For each (k₁, k₂, k₃), compute k = √(kᵢkᵢ)
 | Velocity derivative skewness | $S_u = \overline{u'^3_{,x}} \, / \, [\overline{u'^2_{,x}}]^{3/2}$ | Should settle to $-0.4$ to $-0.6$ for isotropic turbulence |
 | Radial energy spectrum | $E(k)$ projected onto spherical shells in $k$-space | Plot at intervals of $\tau_b = 1/(u_0 k_0 / 2)$ |
 
-### Expected Results
+### Results
 
-- $q^2/q_0^2$ decreases monotonically with time
-- Decay is **slower** at higher $Re_\lambda$
-- Skewness $S = (S_1 + S_2 + S_3)/3 \approx -0.4$ to $-0.6$
+All results shown below are for $Re_\lambda = 80$, $N = 128$.
 
-### Reference
+#### Flow Field Contours (z-mid plane)
 
-> Comte-Bellot, G. & Corrsin, S. (1971). *Simple Eulerian time correlation of full- and narrow-band velocity signals in grid-generated isotropic turbulence.* Journal of Fluid Mechanics.
+| Velocity Magnitude | Pressure |
+|:---:|:---:|
+| ![Velocity magnitude contour — z-mid plane, Re=80, N=128](Results/Velocity%20field%20new.png) | ![Pressure contour — z-mid plane, Re=80, N=128](Results/Pressure%20field%20new.png) |
+
+#### Turbulence Decay Statistics
+
+| Normalised Kinetic Energy Decay | Velocity Derivative Skewness |
+|:---:|:---:|
+| ![Decay of normalised energy q² vs time, Re=80](Results/KE%20decay.png) | ![Velocity derivative skewness vs time, Re=80](Results/Velocity%20Skewness.png) |
+
+> Skewness settles to $S \approx -0.4$ to $-0.5$, consistent with the expected range for isotropic turbulence.
 
 ---
-
-*Notes based on lecture material — DNS of Homogeneous Isotropic Turbulence using the Pseudospectral method (Rogallo, 1981).*
-
 
 To run the code, Open MATLAB,Keep all files in the same folder, Run main.m
 
