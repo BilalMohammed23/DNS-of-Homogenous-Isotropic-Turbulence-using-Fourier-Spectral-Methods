@@ -411,4 +411,4 @@ All results shown below are for $Re_\lambda = 80$, $N = 128$.
 
 To run the code, Open MATLAB,Keep all files in the same folder, Run main.m
 
-Input parameters are made simple just N and Reynold's number. If you wanna increase the Reynolds ' number, then it's recommended to increase the grid size as well.
+Input parameters are made simple just N and Reynold's number. If you wanna increase the Reynolds ' number, then it's recommended to increase the no. of grid points(a finer mesh) as well.
