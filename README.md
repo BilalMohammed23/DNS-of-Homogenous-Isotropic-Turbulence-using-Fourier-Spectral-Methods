@@ -279,7 +279,7 @@ $$\int \hat{\vec{u}} \cdot \hat{\vec{u}}^* \, d^3\vec{k} = \int_0^\infty (\alpha
 
 One commonly used form:
 
-$$\boxed{E(k) = 16\sqrt{\frac{2}{\pi}} \; \frac{u_0^2}{k_0} \left(\frac{k}{k_0}\right)^4 e^{-2(k/k_0)^2}}$$
+$$\boxed{E(k) = 16\sqrt{\frac{2}{\pi}} \frac{u_0^2}{k_0} \left(\frac{k}{k_0}\right)^4 e^{-2(k/k_0)^2}}$$
 
 | Parameter | Description |
 |---|---|
